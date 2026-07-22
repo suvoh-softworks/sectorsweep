@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccg26nbhee2rc"]
+
+[ext_resource type="Texture2D" uid="uid://dcq4ojs71wsqw" path="res://assets/textures/images/Tide Pool.png" id="1_pf0is"]
+
+[resource]
+albedo_texture = ExtResource("1_pf0is")
+metallic_specular = 0.0
+texture_filter = 2

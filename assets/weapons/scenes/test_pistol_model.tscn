@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d1qs18oq8a17s"]
+
+[ext_resource type="ArrayMesh" uid="uid://cxrd3txmgcdx7" path="res://assets/weapons/models/G21_Cube_002.res" id="1_rg820"]
+
+[node name="WeaponModel" type="MeshInstance3D" unique_id=999134808]
+transform = Transform3D(-0.15, 1.3113417e-08, 0, 1.3113417e-08, 0.15, 1.3113417e-08, 1.1464113e-15, 1.3113417e-08, -0.15, 0, 0, 0)
+mesh = ExtResource("1_rg820")
+
+[node name="EmitPoint" type="Node3D" parent="." unique_id=632546144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25676498, -1.1223554e-08)

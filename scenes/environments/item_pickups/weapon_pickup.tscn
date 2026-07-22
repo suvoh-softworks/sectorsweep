@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cfulygl747h48"]
+
+[ext_resource type="PackedScene" uid="uid://w1aar68nadhp" path="res://scenes/environments/item_pickups/item_pickup.tscn" id="1_61tva"]
+[ext_resource type="Script" uid="uid://dfhrc2616kwa4" path="res://assets/scripts/environment/item_pickup/weapon_pickup.gd" id="2_wxgof"]
+[ext_resource type="ArrayMesh" uid="uid://2revsi3p3q3j" path="res://assets/weapons/models/pump_mag_shotgun_Cube_003.res" id="3_7o62m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5adev"]
+size = Vector3(1, 0.65930176, 2.114582)
+
+[node name="WeaponPickup" unique_id=877778841 instance=ExtResource("1_61tva")]
+script = ExtResource("2_wxgof")
+weapon_slot = 1
+weapon_resource = null
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1706899866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43396562, -0.08731079)
+shape = SubResource("BoxShape3D_5adev")
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=2099107668]
+transform = Transform3D(-1.0927848e-09, -0.025, 0, 0.025, -1.0927848e-09, 0, 0, 0, 0.025, 0.25196648, 0, 0.28806567)
+mesh = ExtResource("3_7o62m")

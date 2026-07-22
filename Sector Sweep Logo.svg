@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="Sector Sweep Logo.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="0.78710938"
+     inkscape:cx="21.598015"
+     inkscape:cy="210.89826"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2"
+     showguides="false" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient13"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#a0a034;stop-opacity:1;"
+         offset="0"
+         id="stop13" />
+      <stop
+         style="stop-color:#445016;stop-opacity:0.49803922;"
+         offset="0.5"
+         id="stop15" />
+      <stop
+         style="stop-color:#95b62b;stop-opacity:0;"
+         offset="1"
+         id="stop14" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient13"
+       id="linearGradient14"
+       x1="109.75435"
+       y1="256"
+       x2="402.24565"
+       y2="256"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Background"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#1a1a1a;stroke-width:8.5"
+       id="rect1"
+       width="512"
+       height="512"
+       x="-0.63523573"
+       y="0"
+       sodipodi:insensitive="true" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Map"
+     transform="matrix(1,0.02293408,0.3257716,1.0074713,-108.19602,2.3800023)">
+    <rect
+       style="fill:url(#linearGradient14);stroke:#b9b800;stroke-width:6;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2"
+       width="286.4913"
+       height="286.4913"
+       x="112.75435"
+       y="112.75435" />
+    <path
+       style="fill:#918a6f;stroke:#b9b800;stroke-width:6;stroke-dasharray:none;stroke-opacity:1"
+       d="M 113.7469,196 H 399.60298 Z"
+       id="path7" />
+    <path
+       style="fill:#918a6f;stroke:#b9b800;stroke-width:6;stroke-dasharray:none;stroke-opacity:1"
+       d="M 113.42928,316.51117 H 399.9206 Z"
+       id="path8" />
+    <path
+       style="fill:#918a6f;stroke:#b9b800;stroke-width:6;stroke-dasharray:none;stroke-opacity:1"
+       d="M 196,115.47395 V 399.42432 Z"
+       id="path9" />
+    <path
+       style="fill:#918a6f;stroke:#b9b800;stroke-width:6;stroke-dasharray:none;stroke-opacity:1"
+       d="M 316,113.07196 V 398.92804 Z"
+       id="path10" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Text"
+     transform="translate(-36.227025,25.533424)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:89.9379px;line-height:0;font-family:'Noto Music';-inkscape-font-specification:'Noto Music';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:9.10621px;word-spacing:2.9551px;writing-mode:lr-tb;direction:ltr;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:8;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="304.67395"
+       y="188.90649"
+       id="text10"
+       transform="matrix(0.84706295,0,-1.277432e-8,1.1805498,-125.32309,2.3800023)"><tspan
+         sodipodi:role="line"
+         x="304.67395"
+         y="188.90649"
+         id="tspan11"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:89.9379px;font-family:'Noto Music';-inkscape-font-specification:'Noto Music';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:8;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">SECTOR</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:95.1321px;line-height:0;font-family:'Noto Music';-inkscape-font-specification:'Noto Music';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:9.63212px;word-spacing:3.12577px;writing-mode:lr-tb;direction:ltr;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:8;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="195.27515"
+       y="297.68625"
+       id="text10-2"
+       transform="scale(0.89722734,1.1145447)"><tspan
+         sodipodi:role="line"
+         id="tspan13"
+         x="195.27515"
+         y="297.68625"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Noto Music';-inkscape-font-specification:'Noto Music';stroke:#ffffff;stroke-width:8;stroke-dasharray:none;stroke-opacity:1">SWEEP</tspan></text>
+  </g>
+</svg>

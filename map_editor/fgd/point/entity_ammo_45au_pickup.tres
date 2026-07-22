@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://bqpi26joa5jyl"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_c8ile"]
+[ext_resource type="PackedScene" uid="uid://dpkqnigb7os05" path="res://scenes/environments/item_pickups/ammo_45au_pickup.tscn" id="2_5hlkb"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="3_dfanu"]
+
+[resource]
+script = ExtResource("3_dfanu")
+scene_file = ExtResource("2_5hlkb")
+classname = "ammo_45au_pickup"
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8),
+"studio": "\"red://map_editor/models/ammo_45au_pickup.glb\""
+})
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

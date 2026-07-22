@@ -1,0 +1,8 @@
+extends PlayerState
+
+func _on_idle_state_processing(_delta: float) -> void:
+	if debug :
+		print("Idling!")
+	#check for player movement input
+	if player_controller and player_controller._input_dir.length() > 0:
+		player_controller.state_chart.send_event("onMoving")

@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://gbwl4c8rpy1h"
+path="res://.godot/imported/abyeis.map-3b2f27673b49c26e71fb7ecfccfa6b82.tres"
+
+[deps]
+
+source_file="res://map_editor/maps/abyeis.map"
+dest_files=["res://.godot/imported/abyeis.map-3b2f27673b49c26e71fb7ecfccfa6b82.tres"]
+
+[params]
+

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="FuncGodotMapSettings" format=3 uid="uid://dw8d328fepka7"]
+
+[ext_resource type="Material" uid="uid://cvex6toty8yn7" path="res://addons/func_godot/textures/default_material.tres" id="1_r0bpp"]
+[ext_resource type="Resource" uid="uid://dms430vomx14g" path="res://map_editor/sectorsweep_fgd.tres" id="2_r0bpp"]
+[ext_resource type="Script" uid="uid://38q6k0ctahjn" path="res://addons/func_godot/src/map/func_godot_map_settings.gd" id="3_dq7vm"]
+[ext_resource type="Script" uid="uid://cij36hpqc46c" path="res://addons/func_godot/src/import/quake_wad_file.gd" id="4_1t3ha"]
+[ext_resource type="Resource" uid="uid://bn2irmupey0so" path="res://map_editor/Base WAD.wad" id="5_yjea0"]
+
+[resource]
+script = ExtResource("3_dq7vm")
+inverse_scale_factor = 48.0
+entity_fgd = ExtResource("2_r0bpp")
+use_groups_hierarchy = true
+base_texture_dir = "res://map_editor/Base WAD"
+clip_texture = "devclip"
+skip_texture = "devskip"
+origin_texture = "devorigin"
+texture_wads = Array[ExtResource("4_1t3ha")]([ExtResource("5_yjea0")])
+base_material_dir = "res://map_editor/textures"
+metadata/_custom_type_script = "uid://38q6k0ctahjn"

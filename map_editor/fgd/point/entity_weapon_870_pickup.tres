@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://bukopmlhhqkqe"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_qxjan"]
+[ext_resource type="PackedScene" uid="uid://bkn87dqbead4j" path="res://scenes/environments/item_pickups/weapon_870_pickup.tscn" id="2_a1sov"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="3_jwo04"]
+
+[resource]
+script = ExtResource("3_jwo04")
+scene_file = ExtResource("2_a1sov")
+classname = "weapon_870_pickup"
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8),
+"studio": "\"red://map_editor/models/weapon_870_pickup.glb\""
+})
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

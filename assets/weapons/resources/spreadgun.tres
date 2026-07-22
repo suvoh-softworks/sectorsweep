@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://cgady5o5jrrbl"]
+
+[ext_resource type="PackedScene" uid="uid://x7nbc85rxy6p" path="res://assets/weapons/scenes/projectile.tscn" id="1_g5k3u"]
+[ext_resource type="Script" uid="uid://7do0yeyhbyb7" path="res://assets/weapons/scripts/weapon.gd" id="1_ib0fs"]
+[ext_resource type="PackedScene" uid="uid://dfg2if2h8s7am" path="res://assets/weapons/scenes/spreadgun_model.tscn" id="3_g5k3u"]
+
+[resource]
+script = ExtResource("1_ib0fs")
+weapon_name = "Spreadgun"
+damage = 10.0
+reload_speed = 6.0
+accuracy = 88
+recoil_yaw = 4.0
+recoil_roll = 2.0
+fire_rate = 1.5
+bullet_count = 20
+weapon_model = ExtResource("3_g5k3u")
+projectile_scene = ExtResource("1_g5k3u")
+emit_point = Vector3(0.3, -0.3, 0.5)
+weapon_position = Vector3(0.3, -0.4, -0.5)
+metadata/_custom_type_script = "uid://7do0yeyhbyb7"

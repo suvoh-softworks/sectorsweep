@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://brod37w5fxqlc"]
+
+[ext_resource type="Script" uid="uid://dv843hq6eoll" path="res://assets/weapons/scripts/weapon_data.gd" id="1_njhhk"]
+[ext_resource type="Resource" uid="uid://cgady5o5jrrbl" path="res://assets/weapons/resources/spreadgun.tres" id="2_ht36y"]
+
+[resource]
+script = ExtResource("1_njhhk")
+weapon = ExtResource("2_ht36y")
+weapon_name = "Shotgun"
+ammo_reserve = 190
+metadata/_custom_type_script = "uid://dv843hq6eoll"

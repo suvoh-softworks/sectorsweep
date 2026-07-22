@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://y83gpl0xbcom"]
+
+[ext_resource type="PackedScene" uid="uid://bqms4uwhclks7" path="res://assets/player/player_controller.tscn" id="1_4ye72"]
+
+[sub_resource type="Sky" id="Sky_4ye72"]
+
+[sub_resource type="Environment" id="Environment_4ye72"]
+background_mode = 2
+sky = SubResource("Sky_4ye72")
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_w3snd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pi5jr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_74kyy"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kx2s4"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4ye72"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rryhs"]
+height = 4.0
+radius = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hb8io"]
+top_radius = 2.0
+bottom_radius = 2.0
+height = 4.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uu6m2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hb8io"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t3dhk"]
+
+[node name="Node3D" type="Node3D" unique_id=52011892]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=395116344]
+environment = SubResource("Environment_4ye72")
+camera_attributes = SubResource("CameraAttributesPhysical_w3snd")
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=254145640]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, -1, 0)
+physics_material_override = SubResource("PhysicsMaterial_pi5jr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1206546189]
+shape = SubResource("BoxShape3D_74kyy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=2063548749]
+mesh = SubResource("BoxMesh_kx2s4")
+
+[node name="CharacterBody3D" parent="." unique_id=1694689267 instance=ExtResource("1_4ye72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26876688, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1666737002]
+transform = Transform3D(-0.32913038, 0.9442845, 0, -0.8386838, -0.29232323, 0.45951787, 0.4339156, 0.15124129, 0.8881685, 0, 19.201082, 0)
+shadow_enabled = true
+
+[node name="CrouchCylinder" type="StaticBody3D" parent="." unique_id=22984437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.835, 3, 0)
+physics_material_override = SubResource("PhysicsMaterial_4ye72")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CrouchCylinder" unique_id=453981882]
+shape = SubResource("CylinderShape3D_rryhs")
+debug_color = Color(1.3385714, 1.546088, 0.34051636, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CrouchCylinder" unique_id=1397987682]
+mesh = SubResource("CylinderMesh_hb8io")
+
+[node name="CrouchCylinder2" type="StaticBody3D" parent="." unique_id=1008679553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.835, -1.244607, 5.181143)
+physics_material_override = SubResource("PhysicsMaterial_4ye72")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CrouchCylinder2" unique_id=396623755]
+shape = SubResource("CylinderShape3D_rryhs")
+debug_color = Color(1.3385714, 1.546088, 0.34051636, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CrouchCylinder2" unique_id=1675987501]
+mesh = SubResource("CylinderMesh_hb8io")
+
+[node name="CrouchCylinder3" type="StaticBody3D" parent="." unique_id=652982531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9960365, -0.27516544, 5.181143)
+physics_material_override = SubResource("PhysicsMaterial_4ye72")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CrouchCylinder3" unique_id=913472835]
+shape = SubResource("CylinderShape3D_rryhs")
+debug_color = Color(1.3385714, 1.546088, 0.34051636, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CrouchCylinder3" unique_id=421373499]
+mesh = SubResource("CylinderMesh_hb8io")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1046702799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.565, 0.5, 0)
+physics_material_override = SubResource("PhysicsMaterial_uu6m2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=2104465732]
+shape = SubResource("CapsuleShape3D_hb8io")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=1900175902]
+mesh = SubResource("CapsuleMesh_t3dhk")

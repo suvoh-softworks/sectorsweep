@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cyihvvcotwlpp"]
+
+[ext_resource type="PackedScene" uid="uid://bup50dbfsaffv" path="res://scenes/environments/item_pickups/ammo_pickup.tscn" id="1_iy3wh"]
+
+[node name="AmmoPickup" unique_id=877778841 instance=ExtResource("1_iy3wh")]
+weapon_slot = 3
+ammo_amount = 10

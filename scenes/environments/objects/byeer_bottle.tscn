@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b2b6t8bmm3nuj"]
+
+[ext_resource type="Script" uid="uid://dqfkjbxvtxboe" path="res://assets/scripts/environment/physics_objects/breakable_box.gd" id="1_xs1kn"]
+[ext_resource type="ArrayMesh" uid="uid://d18y8n61esn5t" path="res://assets/models/environment/bottle_beer_Cube.res" id="2_xs1kn"]
+[ext_resource type="Script" uid="uid://bmm7v1dx5t0gd" path="res://assets/scripts/components/health_component.gd" id="3_jec0l"]
+[ext_resource type="Script" uid="uid://0qyq75c5b2ki" path="res://assets/scripts/components/interaction_component.gd" id="4_lhso5"]
+[ext_resource type="Script" uid="uid://bpgg8a600harj" path="res://assets/scripts/components/physicsholdable_component.gd" id="5_alqaq"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xs1kn"]
+points = PackedVector3Array(-0.04199999, 0.0135888215, -8.221716e-06, -0.031508215, 0.0135888215, 0.03149177, -0.04199999, 0.1263689, -8.221716e-06, -0.031508215, 0.0135888215, -0.031508215, -0.027224347, 0, -0.027224347, -0.03500273, 0, -8.221716e-06, -0.027224347, 0, 0.027216129, -8.221716e-06, 0.0135888215, 0.04199999, -0.031508215, 0.1263689, 0.03149177, -0.031508215, 0.1263689, -0.031508215, -0.020539539, 0.23443691, -8.221716e-06, -8.221716e-06, 0.0135888215, -0.04199999, -8.221716e-06, 0, -0.03500273, -8.221716e-06, 0, 0.034994513, 0.027216129, 0, 0.027216129, 0.03149177, 0.0135888215, 0.03149177, -8.221716e-06, 0.1263689, 0.04199999, -8.221716e-06, 0.23443691, 0.02053132, -8.221716e-06, 0.2431233, 0.018475723, -0.012325367, 0.2431233, 0.012317147, -0.01848394, 0.2431233, -8.221716e-06, -8.221716e-06, 0.1263689, -0.04199999, -0.012325367, 0.2431233, -0.012325367, -8.221716e-06, 0.2431233, -0.01848394, -8.221716e-06, 0.23443691, -0.020539539, 0.03149177, 0.0135888215, -0.031508215, 0.027216129, 0, -0.027224347, 0.034994513, 0, -8.221716e-06, 0.04199999, 0.0135888215, -8.221716e-06, 0.03149177, 0.1263689, 0.03149177, 0.012317147, 0.2431233, 0.012317147, 0.03149177, 0.1263689, -0.031508215, 0.012317147, 0.2431233, -0.012325367, 0.04199999, 0.1263689, -8.221716e-06, 0.02053132, 0.23443691, -8.221716e-06, 0.018475723, 0.2431233, -8.221716e-06)
+
+[node name="BreakableBottle" type="RigidBody3D" unique_id=62401971]
+collision_layer = 3
+can_sleep = false
+freeze_mode = 1
+script = ExtResource("1_xs1kn")
+entity_name = "Bottle"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1424015570]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+mesh = ExtResource("2_xs1kn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=565493529]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_xs1kn")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1137576934]
+script = ExtResource("3_jec0l")
+max_health = 50.0
+max_overhealth = 0.0
+metadata/_custom_type_script = "uid://bmm7v1dx5t0gd"
+
+[node name="InteractionComponent" type="Node" parent="." unique_id=365132166 node_paths=PackedStringArray("object_ref")]
+script = ExtResource("4_lhso5")
+object_ref = NodePath("..")
+interaction_type = 1
+metadata/_custom_type_script = "uid://0qyq75c5b2ki"
+
+[node name="PhysicsHoldableComponent" type="Node" parent="." unique_id=562177246]
+script = ExtResource("5_alqaq")
+metadata/_custom_type_script = "uid://bpgg8a600harj"
+
+[connection signal="entity_death" from="HealthComponent" to="." method="_on_health_component_entity_death"]

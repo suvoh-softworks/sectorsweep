@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c1bi44lrav2jg"]
+
+[ext_resource type="Script" uid="uid://dv843hq6eoll" path="res://assets/weapons/scripts/weapon_data.gd" id="1_lhwb5"]
+[ext_resource type="Resource" uid="uid://b3k6db2g3fjio" path="res://assets/weapons/resources/test_pistol.tres" id="2_yoogc"]
+
+[resource]
+script = ExtResource("1_lhwb5")
+weapon = ExtResource("2_yoogc")
+weapon_name = "Pistol"
+available = true
+ammo_magazine = 20
+ammo_reserve = 180
+metadata/_custom_type_script = "uid://dv843hq6eoll"

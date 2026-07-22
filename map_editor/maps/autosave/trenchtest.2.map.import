@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://mr6vunme3qol"
+path="res://.godot/imported/trenchtest.2.map-445f3ca581f208924167fce848273cc9.tres"
+
+[deps]
+
+source_file="res://map_editor/maps/autosave/trenchtest.2.map"
+dest_files=["res://.godot/imported/trenchtest.2.map-445f3ca581f208924167fce848273cc9.tres"]
+
+[params]
+

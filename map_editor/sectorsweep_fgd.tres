@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" format=3 uid="uid://dms430vomx14g"]
+
+[ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_ijpef"]
+[ext_resource type="Script" uid="uid://drlmgulwbjwqu" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="1_pfbfy"]
+[ext_resource type="Resource" uid="uid://23ioy8vumbqs" path="res://map_editor/fgd/solid/func_rotating_door.tres" id="2_xrse1"]
+[ext_resource type="Resource" uid="uid://005pi3am6qvl" path="res://map_editor/fgd/point/func_light.tres" id="3_nydrp"]
+[ext_resource type="Resource" uid="uid://b53te60gpka4" path="res://map_editor/fgd/point/func_spotlight.tres" id="4_y1suf"]
+[ext_resource type="Resource" uid="uid://bu012x1jpdj3" path="res://map_editor/fgd/point/entity_weapon_G21_pickup.tres" id="5_xn8jm"]
+[ext_resource type="Resource" uid="uid://bukopmlhhqkqe" path="res://map_editor/fgd/point/entity_weapon_870_pickup.tres" id="6_5x2mw"]
+[ext_resource type="Resource" uid="uid://bqpi26joa5jyl" path="res://map_editor/fgd/point/entity_ammo_45au_pickup.tres" id="7_5xtcw"]
+[ext_resource type="Resource" uid="uid://dtgqmejh0vr24" path="res://map_editor/fgd/point/entity_ammo_12ga_pickup.tres" id="8_n15go"]
+
+[resource]
+script = ExtResource("1_pfbfy")
+target_map_editor = 2
+fgd_name = "SectorSweep"
+base_fgd_files = Array[Resource]([ExtResource("1_ijpef")])
+entity_definitions = Array[Resource]([ExtResource("2_xrse1"), ExtResource("3_nydrp"), ExtResource("4_y1suf"), ExtResource("5_xn8jm"), ExtResource("6_5x2mw"), ExtResource("7_5xtcw"), ExtResource("8_n15go")])
+metadata/_custom_type_script = "uid://drlmgulwbjwqu"

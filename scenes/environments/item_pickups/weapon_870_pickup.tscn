@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bkn87dqbead4j"]
+
+[ext_resource type="PackedScene" uid="uid://cfulygl747h48" path="res://scenes/environments/item_pickups/weapon_pickup.tscn" id="1_dcjyt"]
+[ext_resource type="Resource" uid="uid://cgady5o5jrrbl" path="res://assets/weapons/resources/spreadgun.tres" id="2_v7ya3"]
+
+[node name="WeaponPickup" unique_id=877778841 instance=ExtResource("1_dcjyt")]
+weapon_slot = 3
+weapon_resource = ExtResource("2_v7ya3")
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1706899866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2636165, 0.07463646)
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=2099107668]
+transform = Transform3D(-7.8680495e-10, -0.018, 0, 0.018, -7.8680495e-10, 0, 0, 0, 0.018, 0.25196648, 0, 0.28806567)

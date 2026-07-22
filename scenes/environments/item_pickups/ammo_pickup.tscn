@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bup50dbfsaffv"]
+
+[ext_resource type="PackedScene" uid="uid://w1aar68nadhp" path="res://scenes/environments/item_pickups/item_pickup.tscn" id="1_xvme4"]
+[ext_resource type="Script" uid="uid://c7odybmuav1se" path="res://assets/scripts/environment/item_pickup/ammo_pickup.gd" id="2_qln6k"]
+[ext_resource type="ArrayMesh" uid="uid://d0py3dno7aje4" path="res://assets/models/pickups/ammocan_Cube_001.res" id="3_5v1na"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qln6k"]
+size = Vector3(0.45, 0.45, 0.5)
+
+[node name="AmmoPickup" unique_id=877778841 instance=ExtResource("1_xvme4")]
+script = ExtResource("2_qln6k")
+weapon_slot = 1
+ammo_amount = 20
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1706899866]
+shape = SubResource("BoxShape3D_qln6k")
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=2099107668]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.25, 0)
+mesh = ExtResource("3_5v1na")

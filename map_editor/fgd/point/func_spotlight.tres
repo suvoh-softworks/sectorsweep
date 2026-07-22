@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" format=3 uid="uid://b53te60gpka4"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_jh684"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="2_ea3uu"]
+[ext_resource type="Script" uid="uid://cn38f0kyqh4ab" path="res://assets/scripts/environment/spotlight.gd" id="3_jh684"]
+
+[resource]
+script = ExtResource("2_ea3uu")
+script_class = ExtResource("3_jh684")
+classname = "func_spotlight"
+description = "A directional light"
+class_properties = Dictionary[String, Variant]({
+"color": Color(1, 1, 1, 1),
+"energy": 3.0,
+"indirect_energy": 0.0,
+"lod_fade": true,
+"shadow_enabled": true,
+"spot_angle": 25.0,
+"spot_angle_attenuation": 2.0,
+"spot_attentuation": 2.0,
+"spot_range": 30.0
+})
+auto_apply_to_matching_node_properties = true
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"flags": "Angle,Light",
+"size": AABB(-8, -8, -8, 8, 8, 8)
+})
+node_class = "SpotLight3D"
+metadata/_custom_type_script = "uid://cxsqwtsqd8w33"

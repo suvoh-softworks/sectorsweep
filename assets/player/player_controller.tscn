@@ -1,0 +1,447 @@
+[gd_scene format=3 uid="uid://bqms4uwhclks7"]
+
+[ext_resource type="Script" uid="uid://bn6al05neagu3" path="res://assets/player/scripts/player_controller.gd" id="1_0rv8c"]
+[ext_resource type="Script" uid="uid://0c7xcyvu7igk" path="res://assets/player/scripts/camera_controller.gd" id="2_nh3hr"]
+[ext_resource type="Material" uid="uid://ccg26nbhee2rc" path="res://assets/textures/Tide Pool.tres" id="2_tbmjr"]
+[ext_resource type="Script" uid="uid://b06u67tkhe331" path="res://assets/player/scripts/camera_effects.gd" id="3_tbmjr"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="4_xsli4"]
+[ext_resource type="Script" uid="uid://c1vp0ojjvaby1" path="res://addons/godot_state_charts/parallel_state.gd" id="5_3waym"]
+[ext_resource type="Script" uid="uid://wt76epttt7n5" path="res://assets/player/scripts/components/mouse_capture.gd" id="5_87wuc"]
+[ext_resource type="Script" uid="uid://bbgoksndroxrg" path="res://assets/player/scripts/components/step_handler.gd" id="6_nh3hr"]
+[ext_resource type="Script" uid="uid://dgol6nhp82y6a" path="res://assets/player/scripts/components/flashlight.gd" id="6_tb2bt"]
+[ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="6_yu5an"]
+[ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="7_3waym"]
+[ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="8_f47x8"]
+[ext_resource type="Script" uid="uid://chuc8vhsktobx" path="res://assets/weapons/scripts/weapon_controller.gd" id="9_so0u8"]
+[ext_resource type="Script" uid="uid://bmm7v1dx5t0gd" path="res://assets/scripts/components/health_component.gd" id="10_6fvff"]
+[ext_resource type="PackedScene" uid="uid://bcwkugn6v3oy7" path="res://addons/godot_state_charts/utilities/state_chart_debugger.tscn" id="10_q8n73"]
+[ext_resource type="Script" uid="uid://80ocutfbmojx" path="res://assets/player/scripts/components/state_machine.gd" id="11_1eq6n"]
+[ext_resource type="Script" uid="uid://d35y5wumbaccy" path="res://assets/player/scripts/components/interaction_controller.gd" id="11_yw5y0"]
+[ext_resource type="Script" uid="uid://3irqp1t7vrge" path="res://assets/player/scripts/states/base_state.gd" id="12_so0u8"]
+[ext_resource type="Script" uid="uid://cirejja2yw35o" path="res://assets/player/scripts/states/grounded_state.gd" id="13_e2ysr"]
+[ext_resource type="Script" uid="uid://doooy2hulf62h" path="res://assets/player/scripts/states/idle_state.gd" id="14_t7ir0"]
+[ext_resource type="Script" uid="uid://cm0kq402p84ch" path="res://assets/player/scripts/states/moving_state.gd" id="15_t8r2n"]
+[ext_resource type="Script" uid="uid://2ufwurh2l3lg" path="res://assets/player/scripts/states/walking_state.gd" id="16_uimsy"]
+[ext_resource type="Script" uid="uid://blq7jj6hclxo6" path="res://assets/player/scripts/states/sprinting_state.gd" id="17_0l3ar"]
+[ext_resource type="Script" uid="uid://yqk6eyki8a3p" path="res://assets/player/scripts/states/airborne_state.gd" id="18_wv3xg"]
+[ext_resource type="Script" uid="uid://dyumrlydk536" path="res://assets/player/scripts/states/standing_state.gd" id="19_6fvff"]
+[ext_resource type="Script" uid="uid://bqyd4x3ohmgk" path="res://assets/player/scripts/states/crouching_state.gd" id="20_yw5y0"]
+[ext_resource type="Script" uid="uid://d1ayihnlk6mne" path="res://assets/player/scripts/states/flashlight_on.gd" id="24_1eq6n"]
+[ext_resource type="Script" uid="uid://bst5eng27tq86" path="res://assets/player/scripts/states/flashlight_off.gd" id="25_so0u8"]
+[ext_resource type="Script" uid="uid://b8x0bdp2h8qyg" path="res://assets/weapons/scripts/states/weapon_state_machine.gd" id="28_uimsy"]
+[ext_resource type="Script" uid="uid://bf61s3nbgabal" path="res://assets/weapons/scripts/states/weapon_state.gd" id="29_0l3ar"]
+[ext_resource type="Script" uid="uid://dhtbketd3mwhq" path="res://assets/weapons/scripts/states/weapon_idle_state.gd" id="30_wv3xg"]
+[ext_resource type="Script" uid="uid://bndqt82asbwxt" path="res://assets/weapons/scripts/states/weapon_reloading_state.gd" id="31_6fvff"]
+[ext_resource type="Script" uid="uid://w10guli51wrr" path="res://assets/weapons/scripts/states/weapon_firing_state.gd" id="31_wv3xg"]
+[ext_resource type="Script" uid="uid://dr0nls7oofwxg" path="res://assets/weapons/scripts/states/weapon_empty_state.gd" id="32_6fvff"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_e4srk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_urp3m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hxih5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5irn5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wv3xg"]
+
+[node name="PlayerController" type="CharacterBody3D" unique_id=1694689267 node_paths=PackedStringArray("camera", "camera_effects", "state_chart", "standing_collision", "crouching_collision", "crouch_check", "interaction_raycast", "interaction_shapecast", "step_handler", "player_flashlight", "weapon_controller", "interaction_controller") groups=["Player"]]
+script = ExtResource("1_0rv8c")
+movement_debug = true
+camera = NodePath("CameraController")
+camera_effects = NodePath("CameraController/Camera3D")
+state_chart = NodePath("PlayerStateChart")
+standing_collision = NodePath("StandingCollision")
+crouching_collision = NodePath("CrouchingCollision")
+crouch_check = NodePath("CrouchCheck")
+interaction_raycast = NodePath("CameraController/Camera3D/InteractionRaycast")
+interaction_shapecast = NodePath("CameraController/Camera3D/InteractionShapecast")
+step_handler = NodePath("Components/StepHandler")
+player_flashlight = NodePath("CameraController/Camera3D/PlayerFlashlight")
+weapon_controller = NodePath("Components/WeaponController")
+interaction_controller = NodePath("Components/InteractionController")
+metadata/_edit_horizontal_guides_ = [-82.0]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1137874057]
+mesh = SubResource("CapsuleMesh_e4srk")
+surface_material_override/0 = ExtResource("2_tbmjr")
+
+[node name="StandingCollision" type="CollisionShape3D" parent="." unique_id=304239991]
+shape = SubResource("CapsuleShape3D_urp3m")
+
+[node name="CrouchingCollision" type="CollisionShape3D" parent="." unique_id=1192991882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("SphereShape3D_hxih5")
+
+[node name="CrouchCheck" type="ShapeCast3D" parent="." unique_id=1413719685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("SphereShape3D_5irn5")
+target_position = Vector3(0, 0.5, 0)
+
+[node name="CameraController" type="Node3D" parent="." unique_id=1782450618 node_paths=PackedStringArray("player_controller", "component_mouse_capture")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("2_nh3hr")
+player_controller = NodePath("..")
+component_mouse_capture = NodePath("../Components/MouseCapture")
+tilt_lower_limit = -85
+camera_crouch_speed = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraController" unique_id=901067925 node_paths=PackedStringArray("player")]
+fov = 90.0
+script = ExtResource("3_tbmjr")
+player = NodePath("../..")
+bob_up = 0.01
+
+[node name="InteractionRaycast" type="RayCast3D" parent="CameraController/Camera3D" unique_id=913838098]
+target_position = Vector3(0, 0, -1.5)
+
+[node name="PlayerFlashlight" type="SpotLight3D" parent="CameraController/Camera3D" unique_id=1594012557 node_paths=PackedStringArray("player")]
+visible = false
+light_color = Color(1, 1, 0.8980392, 1)
+light_energy = 4.0
+spot_range = 30.0
+spot_attenuation = 2.0
+spot_angle = 25.0
+script = ExtResource("6_tb2bt")
+player = NodePath("../../..")
+
+[node name="InteractionShapecast" type="ShapeCast3D" parent="CameraController/Camera3D" unique_id=1161781090]
+visible = false
+shape = SubResource("BoxShape3D_wv3xg")
+target_position = Vector3(0, 0, -1)
+max_results = 2
+collision_mask = 2
+
+[node name="InteractionPoint" type="Marker3D" parent="CameraController/Camera3D" unique_id=1878547286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+
+[node name="Components" type="Node" parent="." unique_id=67315313]
+
+[node name="MouseCapture" type="Node" parent="Components" unique_id=1457633630]
+script = ExtResource("5_87wuc")
+mouse_sensitivity = 0.01
+
+[node name="StepHandler" type="Node" parent="Components" unique_id=139735298 node_paths=PackedStringArray("player")]
+script = ExtResource("6_nh3hr")
+player = NodePath("../..")
+
+[node name="WeaponController" type="Node" parent="Components" unique_id=192252951 node_paths=PackedStringArray("camera", "weapon_model_parent", "weapon_state_chart")]
+script = ExtResource("9_so0u8")
+camera = NodePath("../../CameraController/Camera3D")
+weapon_model_parent = NodePath("../../CameraController/Camera3D")
+weapon_state_chart = NodePath("../../WeaponStateChart")
+
+[node name="PlayerHealth" type="Node" parent="Components" unique_id=2110692184]
+script = ExtResource("10_6fvff")
+max_overhealth = 50.0
+
+[node name="InteractionController" type="Node" parent="Components" unique_id=271498810 node_paths=PackedStringArray("interaction_point", "interaction_raycast", "camera")]
+script = ExtResource("11_yw5y0")
+interaction_point = NodePath("../../CameraController/Camera3D/InteractionPoint")
+interaction_raycast = NodePath("../../CameraController/Camera3D/InteractionRaycast")
+camera = NodePath("../../CameraController/Camera3D")
+metadata/_custom_type_script = "uid://d35y5wumbaccy"
+
+[node name="PlayerStateChart" type="Node" parent="." unique_id=689403128]
+script = ExtResource("4_xsli4")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="Root" type="Node" parent="PlayerStateChart" unique_id=481721867]
+script = ExtResource("5_3waym")
+metadata/_custom_type_script = "uid://c1vp0ojjvaby1"
+
+[node name="Movement" type="Node" parent="PlayerStateChart/Root" unique_id=955442143]
+script = ExtResource("6_yu5an")
+initial_state = NodePath("Grounded")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="Grounded" type="Node" parent="PlayerStateChart/Root/Movement" unique_id=1169636171]
+script = ExtResource("6_yu5an")
+initial_state = NodePath("Idle")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="Idle" type="Node" parent="PlayerStateChart/Root/Movement/Grounded" unique_id=664349901]
+script = ExtResource("7_3waym")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="OnMoving" type="Node" parent="PlayerStateChart/Root/Movement/Grounded/Idle" unique_id=502512848]
+script = ExtResource("8_f47x8")
+to = NodePath("../../Moving")
+event = &"onMoving"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="Moving" type="Node" parent="PlayerStateChart/Root/Movement/Grounded" unique_id=1996621675]
+script = ExtResource("6_yu5an")
+initial_state = NodePath("Walking")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="Walking" type="Node" parent="PlayerStateChart/Root/Movement/Grounded/Moving" unique_id=613840529]
+script = ExtResource("7_3waym")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="Sprinting" type="Node" parent="PlayerStateChart/Root/Movement/Grounded/Moving" unique_id=261302074]
+script = ExtResource("7_3waym")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="OnIdle" type="Node" parent="PlayerStateChart/Root/Movement/Grounded/Moving" unique_id=1990668256]
+script = ExtResource("8_f47x8")
+to = NodePath("../../Idle")
+event = &"onIdle"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="OnWalking" type="Node" parent="PlayerStateChart/Root/Movement/Grounded/Moving" unique_id=1405872948]
+script = ExtResource("8_f47x8")
+to = NodePath("../Walking")
+event = &"onWalking"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="OnSprinting" type="Node" parent="PlayerStateChart/Root/Movement/Grounded/Moving" unique_id=172869013]
+script = ExtResource("8_f47x8")
+to = NodePath("../Sprinting")
+event = &"onSprinting"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="OnAirborne" type="Node" parent="PlayerStateChart/Root/Movement/Grounded/Moving" unique_id=1789176806]
+script = ExtResource("8_f47x8")
+to = NodePath("../../../Airborne")
+event = &"onAirborne"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="Airborne" type="Node" parent="PlayerStateChart/Root/Movement" unique_id=1485311523]
+script = ExtResource("6_yu5an")
+initial_state = NodePath("Jumping")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="Jumping" type="Node" parent="PlayerStateChart/Root/Movement/Airborne" unique_id=1089648465]
+script = ExtResource("7_3waym")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="OnGrounded" type="Node" parent="PlayerStateChart/Root/Movement/Airborne" unique_id=1822495252]
+script = ExtResource("8_f47x8")
+to = NodePath("../../Grounded")
+event = &"onGrounded"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="Posture" type="Node" parent="PlayerStateChart/Root" unique_id=1994244829]
+script = ExtResource("6_yu5an")
+initial_state = NodePath("Standing")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="Standing" type="Node" parent="PlayerStateChart/Root/Posture" unique_id=234626264]
+script = ExtResource("7_3waym")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="Crouching" type="Node" parent="PlayerStateChart/Root/Posture" unique_id=1215420454]
+script = ExtResource("7_3waym")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="OnStanding" type="Node" parent="PlayerStateChart/Root/Posture" unique_id=1818251534]
+script = ExtResource("8_f47x8")
+to = NodePath("../Standing")
+event = &"onStanding"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="OnCrouching" type="Node" parent="PlayerStateChart/Root/Posture" unique_id=1925209597]
+script = ExtResource("8_f47x8")
+to = NodePath("../Crouching")
+event = &"onCrouching"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="Flashlight" type="Node" parent="PlayerStateChart/Root" unique_id=2129850137]
+script = ExtResource("6_yu5an")
+initial_state = NodePath("FlashlightOff")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="FlashlightOn" type="Node" parent="PlayerStateChart/Root/Flashlight" unique_id=539517316]
+script = ExtResource("7_3waym")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="FlashlightOff" type="Node" parent="PlayerStateChart/Root/Flashlight" unique_id=1564482821]
+script = ExtResource("7_3waym")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="OnFlashlightOn" type="Node" parent="PlayerStateChart/Root/Flashlight" unique_id=752616946]
+script = ExtResource("8_f47x8")
+to = NodePath("../FlashlightOn")
+event = &"onFlashlightOn"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="OnFlashlightOff" type="Node" parent="PlayerStateChart/Root/Flashlight" unique_id=1099603243]
+script = ExtResource("8_f47x8")
+to = NodePath("../FlashlightOff")
+event = &"onFlashlightOff"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="PlayerStateMachine" type="Node" parent="." unique_id=1735163549 node_paths=PackedStringArray("player_controller", "player_flashlight")]
+unique_name_in_owner = true
+script = ExtResource("11_1eq6n")
+player_controller = NodePath("..")
+player_flashlight = NodePath("../CameraController/Camera3D/PlayerFlashlight")
+
+[node name="MovementState" type="Node" parent="PlayerStateMachine" unique_id=890251797]
+script = ExtResource("12_so0u8")
+
+[node name="GroundedState" type="Node" parent="PlayerStateMachine/MovementState" unique_id=114342257]
+script = ExtResource("13_e2ysr")
+
+[node name="IdleState" type="Node" parent="PlayerStateMachine/MovementState/GroundedState" unique_id=1851718275]
+script = ExtResource("14_t7ir0")
+
+[node name="MovingState" type="Node" parent="PlayerStateMachine/MovementState/GroundedState" unique_id=497518109]
+script = ExtResource("15_t8r2n")
+
+[node name="WalkingState" type="Node" parent="PlayerStateMachine/MovementState/GroundedState/MovingState" unique_id=1958036224]
+script = ExtResource("16_uimsy")
+
+[node name="SprintingState" type="Node" parent="PlayerStateMachine/MovementState/GroundedState/MovingState" unique_id=167051262]
+script = ExtResource("17_0l3ar")
+
+[node name="AirborneState" type="Node" parent="PlayerStateMachine/MovementState" unique_id=125210857]
+script = ExtResource("18_wv3xg")
+
+[node name="JumpingState" type="Node" parent="PlayerStateMachine/MovementState/AirborneState" unique_id=1471483494]
+
+[node name="PostureState" type="Node" parent="PlayerStateMachine" unique_id=298249352]
+
+[node name="StandingState" type="Node" parent="PlayerStateMachine/PostureState" unique_id=236179567]
+script = ExtResource("19_6fvff")
+
+[node name="CrouchingState" type="Node" parent="PlayerStateMachine/PostureState" unique_id=898938173]
+script = ExtResource("20_yw5y0")
+
+[node name="FlashlightState" type="Node" parent="PlayerStateMachine" unique_id=392145265]
+
+[node name="FlashlightOn" type="Node" parent="PlayerStateMachine/FlashlightState" unique_id=965429605]
+script = ExtResource("24_1eq6n")
+
+[node name="FlashlightOff" type="Node" parent="PlayerStateMachine/FlashlightState" unique_id=1876439679]
+script = ExtResource("25_so0u8")
+
+[node name="WeaponState" type="Node" parent="PlayerStateMachine" unique_id=1211569622]
+
+[node name="WeaponStateChart" type="Node" parent="." unique_id=458799674]
+script = ExtResource("4_xsli4")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="Root" type="Node" parent="WeaponStateChart" unique_id=254839829]
+script = ExtResource("6_yu5an")
+initial_state = NodePath("IdleState")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="IdleState" type="Node" parent="WeaponStateChart/Root" unique_id=1719072586]
+script = ExtResource("7_3waym")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="HolsteredState" type="Node" parent="WeaponStateChart/Root" unique_id=2144251386]
+script = ExtResource("7_3waym")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="FiringState" type="Node" parent="WeaponStateChart/Root" unique_id=809261796]
+script = ExtResource("7_3waym")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="ReloadingState" type="Node" parent="WeaponStateChart/Root" unique_id=1000274487]
+script = ExtResource("7_3waym")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="EmptyState" type="Node" parent="WeaponStateChart/Root" unique_id=881036688]
+script = ExtResource("7_3waym")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="OnIdle" type="Node" parent="WeaponStateChart/Root" unique_id=1567168991]
+script = ExtResource("8_f47x8")
+to = NodePath("../IdleState")
+event = &"onIdle"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="OnFiring" type="Node" parent="WeaponStateChart/Root" unique_id=1607973526]
+script = ExtResource("8_f47x8")
+to = NodePath("../FiringState")
+event = &"onFiring"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="OnReloading" type="Node" parent="WeaponStateChart/Root" unique_id=641801251]
+script = ExtResource("8_f47x8")
+to = NodePath("../ReloadingState")
+event = &"onReloading"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="OnEmpty" type="Node" parent="WeaponStateChart/Root" unique_id=749939774]
+script = ExtResource("8_f47x8")
+to = NodePath("../EmptyState")
+event = &"onEmpty"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="OnHolstered" type="Node" parent="WeaponStateChart/Root" unique_id=563167083]
+script = ExtResource("8_f47x8")
+to = NodePath("../HolsteredState")
+event = &"onHolstered"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="WeaponStateMachine" type="Node" parent="." unique_id=1187305356 node_paths=PackedStringArray("weapon_controller")]
+unique_name_in_owner = true
+script = ExtResource("28_uimsy")
+weapon_controller = NodePath("../Components/WeaponController")
+
+[node name="Root" type="Node" parent="WeaponStateMachine" unique_id=1891059847]
+script = ExtResource("29_0l3ar")
+
+[node name="Idle" type="Node" parent="WeaponStateMachine/Root" unique_id=1227611115]
+script = ExtResource("30_wv3xg")
+
+[node name="Holstered" type="Node" parent="WeaponStateMachine/Root" unique_id=1157526412]
+script = ExtResource("30_wv3xg")
+
+[node name="Firing" type="Node" parent="WeaponStateMachine/Root" unique_id=1229633384]
+script = ExtResource("31_wv3xg")
+
+[node name="Reloading" type="Node" parent="WeaponStateMachine/Root" unique_id=130988049]
+script = ExtResource("31_6fvff")
+
+[node name="Empty" type="Node" parent="WeaponStateMachine/Root" unique_id=47465430]
+script = ExtResource("32_6fvff")
+
+[node name="StateChartDebugger" parent="." unique_id=974457452 instance=ExtResource("10_q8n73")]
+offset_right = -840.0
+offset_bottom = -248.0
+initial_node_to_watch = NodePath("../PlayerStateChart")
+
+[connection signal="state_processing" from="PlayerStateChart/Root/Movement/Grounded" to="PlayerStateMachine/MovementState/GroundedState" method="_on_grounded_state_processing"]
+[connection signal="state_processing" from="PlayerStateChart/Root/Movement/Grounded/Idle" to="PlayerStateMachine/MovementState/GroundedState/IdleState" method="_on_idle_state_processing"]
+[connection signal="state_processing" from="PlayerStateChart/Root/Movement/Grounded/Moving" to="PlayerStateMachine/MovementState/GroundedState/MovingState" method="_on_moving_state_processing"]
+[connection signal="state_entered" from="PlayerStateChart/Root/Movement/Grounded/Moving/Walking" to="PlayerStateMachine/MovementState/GroundedState/MovingState/WalkingState" method="_on_walking_state_entered"]
+[connection signal="state_processing" from="PlayerStateChart/Root/Movement/Grounded/Moving/Walking" to="PlayerStateMachine/MovementState/GroundedState/MovingState/WalkingState" method="_on_walking_state_processing"]
+[connection signal="state_entered" from="PlayerStateChart/Root/Movement/Grounded/Moving/Sprinting" to="PlayerStateMachine/MovementState/GroundedState/MovingState/SprintingState" method="_on_sprinting_state_entered"]
+[connection signal="state_processing" from="PlayerStateChart/Root/Movement/Grounded/Moving/Sprinting" to="PlayerStateMachine/MovementState/GroundedState/MovingState/SprintingState" method="_on_sprinting_state_processing"]
+[connection signal="state_processing" from="PlayerStateChart/Root/Movement/Airborne" to="PlayerStateMachine/MovementState/AirborneState" method="_on_airborne_state_processing"]
+[connection signal="state_entered" from="PlayerStateChart/Root/Posture/Standing" to="PlayerStateMachine/PostureState/StandingState" method="_on_standing_state_entered"]
+[connection signal="state_processing" from="PlayerStateChart/Root/Posture/Standing" to="PlayerStateMachine/PostureState/StandingState" method="_on_standing_state_processing"]
+[connection signal="state_entered" from="PlayerStateChart/Root/Posture/Crouching" to="PlayerStateMachine/PostureState/CrouchingState" method="_on_crouching_state_entered"]
+[connection signal="state_processing" from="PlayerStateChart/Root/Posture/Crouching" to="PlayerStateMachine/PostureState/CrouchingState" method="_on_crouching_state_processing"]
+[connection signal="state_exited" from="PlayerStateChart/Root/Flashlight/FlashlightOn" to="PlayerStateMachine/FlashlightState/FlashlightOn" method="_on_flashlight_on_state_exited"]
+[connection signal="state_processing" from="PlayerStateChart/Root/Flashlight/FlashlightOn" to="PlayerStateMachine/FlashlightState/FlashlightOn" method="_on_flashlight_on_state_processing"]
+[connection signal="state_exited" from="PlayerStateChart/Root/Flashlight/FlashlightOff" to="PlayerStateMachine/FlashlightState/FlashlightOff" method="_on_flashlight_off_state_exited"]
+[connection signal="state_processing" from="PlayerStateChart/Root/Flashlight/FlashlightOff" to="PlayerStateMachine/FlashlightState/FlashlightOff" method="_on_flashlight_off_state_processing"]
+[connection signal="state_processing" from="WeaponStateChart/Root/IdleState" to="WeaponStateMachine/Root/Idle" method="_on_idle_state_state_processing"]
+[connection signal="state_processing" from="WeaponStateChart/Root/HolsteredState" to="WeaponStateMachine/Root/Idle" method="_on_idle_state_state_processing"]
+[connection signal="state_entered" from="WeaponStateChart/Root/FiringState" to="WeaponStateMachine/Root/Firing" method="_on_firing_state_state_entered"]
+[connection signal="state_processing" from="WeaponStateChart/Root/FiringState" to="WeaponStateMachine/Root/Firing" method="_on_firing_state_state_processing"]
+[connection signal="state_entered" from="WeaponStateChart/Root/ReloadingState" to="WeaponStateMachine/Root/Reloading" method="_on_reloading_state_state_entered"]
+[connection signal="state_processing" from="WeaponStateChart/Root/ReloadingState" to="WeaponStateMachine/Root/Reloading" method="_on_reloading_state_state_processing"]
+[connection signal="state_entered" from="WeaponStateChart/Root/EmptyState" to="WeaponStateMachine/Root/Empty" method="_on_empty_state_state_entered"]
+[connection signal="state_processing" from="WeaponStateChart/Root/EmptyState" to="WeaponStateMachine/Root/Empty" method="_on_empty_state_state_processing"]

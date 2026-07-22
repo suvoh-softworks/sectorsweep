@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://b3k6db2g3fjio"]
+
+[ext_resource type="PackedScene" uid="uid://x7nbc85rxy6p" path="res://assets/weapons/scenes/projectile.tscn" id="1_iyb3b"]
+[ext_resource type="Script" uid="uid://7do0yeyhbyb7" path="res://assets/weapons/scripts/weapon.gd" id="2_kc0av"]
+[ext_resource type="PackedScene" uid="uid://d1qs18oq8a17s" path="res://assets/weapons/scenes/test_pistol_model.tscn" id="3_iyb3b"]
+
+[resource]
+script = ExtResource("2_kc0av")
+damage = 10.0
+max_ammo_magazine = 20
+max_ammo_reserve = 180
+accuracy = 95
+recoil_yaw = 2.0
+recoil_roll = 0.5
+projectile_speed = 100.0
+fire_rate = 100.0
+bullet_count = 1
+weapon_model = ExtResource("3_iyb3b")
+projectile_scene = ExtResource("1_iyb3b")
+emit_point = Vector3(0.3, -0.3, 0.4)
+weapon_position = Vector3(0.3, -0.32, -0.32)
+metadata/_custom_type_script = "uid://7do0yeyhbyb7"

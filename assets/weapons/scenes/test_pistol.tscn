@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c161uo8ssrul7"]
+
+[ext_resource type="PackedScene" uid="uid://d1qs18oq8a17s" path="res://assets/weapons/scenes/test_pistol_model.tscn" id="1_c0gb2"]
+[ext_resource type="PackedScene" uid="uid://dgtph6r7vrgnl" path="res://assets/weapons/models/G21.glb" id="2_6kv7k"]
+
+[node name="Weapon" type="Node3D" unique_id=1741872624]
+
+[node name="WeaponModel" parent="." unique_id=999134808 instance=ExtResource("1_c0gb2")]
+
+[node name="EmitPoint" type="Node3D" parent="." unique_id=1704183675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2644152)
+
+[node name="G21" parent="." unique_id=986433971 instance=ExtResource("2_6kv7k")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)

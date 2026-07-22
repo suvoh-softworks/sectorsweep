@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bvpp2ts8frws4"]
+
+[ext_resource type="Script" uid="uid://dqfkjbxvtxboe" path="res://assets/scripts/environment/physics_objects/breakable_box.gd" id="1_sh8aw"]
+[ext_resource type="PackedScene" uid="uid://du2vopi40nye4" path="res://assets/models/environment/simplecrate.glb" id="2_4s7oo"]
+[ext_resource type="Script" uid="uid://bmm7v1dx5t0gd" path="res://assets/scripts/components/health_component.gd" id="3_fgwc6"]
+[ext_resource type="Script" uid="uid://0qyq75c5b2ki" path="res://assets/scripts/components/interaction_component.gd" id="4_4s7oo"]
+[ext_resource type="Script" uid="uid://bpgg8a600harj" path="res://assets/scripts/components/physicsholdable_component.gd" id="5_fgwc6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kdmp7"]
+
+[node name="BreakableBox" type="RigidBody3D" unique_id=62401971]
+collision_layer = 3
+mass = 10.0
+can_sleep = false
+freeze_mode = 1
+script = ExtResource("1_sh8aw")
+entity_name = "Box"
+
+[node name="CrateModel" parent="." unique_id=863174643 instance=ExtResource("2_4s7oo")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=24246324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_kdmp7")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1137576934]
+script = ExtResource("3_fgwc6")
+max_health = 50.0
+max_overhealth = 0.0
+metadata/_custom_type_script = "uid://bmm7v1dx5t0gd"
+
+[node name="InteractionComponent" type="Node" parent="." unique_id=365132166 node_paths=PackedStringArray("object_ref")]
+script = ExtResource("4_4s7oo")
+object_ref = NodePath("..")
+interaction_type = 1
+metadata/_custom_type_script = "uid://0qyq75c5b2ki"
+
+[node name="PhysicsHoldableComponent" type="Node" parent="." unique_id=562177246]
+script = ExtResource("5_fgwc6")
+metadata/_custom_type_script = "uid://bpgg8a600harj"
+
+[connection signal="entity_death" from="HealthComponent" to="." method="_on_health_component_entity_death"]

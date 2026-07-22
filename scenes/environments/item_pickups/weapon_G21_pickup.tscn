@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b4scae4nbfbw0"]
+
+[ext_resource type="PackedScene" uid="uid://cfulygl747h48" path="res://scenes/environments/item_pickups/weapon_pickup.tscn" id="1_cnn2w"]
+[ext_resource type="Resource" uid="uid://b3k6db2g3fjio" path="res://assets/weapons/resources/test_pistol.tres" id="2_ay66v"]
+[ext_resource type="ArrayMesh" uid="uid://d1tnltxprpukb" path="res://assets/weapons/models/G21_Cube_002.res" id="3_dpjkw"]
+
+[node name="WeaponPickup" unique_id=877778841 instance=ExtResource("1_cnn2w")]
+weapon_resource = ExtResource("2_ay66v")
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1706899866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43396562, 0.014213562)
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=2099107668]
+transform = Transform3D(-1.0927847e-08, -0.25, 0, 0.25, -1.0927847e-08, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = ExtResource("3_dpjkw")

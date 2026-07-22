@@ -1,0 +1,16 @@
+[remap]
+
+importer="func_godot.wad"
+type="Resource"
+uid="uid://bn2irmupey0so"
+path="res://.godot/imported/Base WAD.wad-bc6a788240c57a5e0f2e70822bc8cf27.res"
+
+[deps]
+
+source_file="res://map_editor/Base WAD.wad"
+dest_files=["res://.godot/imported/Base WAD.wad-bc6a788240c57a5e0f2e70822bc8cf27.res"]
+
+[params]
+
+palette_file="res://addons/func_godot/palette.lmp"
+generate_mipmaps=true
