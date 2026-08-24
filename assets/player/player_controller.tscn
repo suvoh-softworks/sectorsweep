@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="7_3waym"]
 [ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="8_f47x8"]
 [ext_resource type="Script" uid="uid://chuc8vhsktobx" path="res://assets/weapons/scripts/weapon_controller.gd" id="9_so0u8"]
-[ext_resource type="Script" uid="uid://bmm7v1dx5t0gd" path="res://assets/scripts/components/health_component.gd" id="10_6fvff"]
+[ext_resource type="Script" uid="uid://bmm7v1dx5t0gd" path="res://assets/components/health_component.gd" id="10_6fvff"]
 [ext_resource type="PackedScene" uid="uid://bcwkugn6v3oy7" path="res://addons/godot_state_charts/utilities/state_chart_debugger.tscn" id="10_q8n73"]
 [ext_resource type="Script" uid="uid://80ocutfbmojx" path="res://assets/player/scripts/components/state_machine.gd" id="11_1eq6n"]
 [ext_resource type="Script" uid="uid://d35y5wumbaccy" path="res://assets/player/scripts/components/interaction_controller.gd" id="11_yw5y0"]

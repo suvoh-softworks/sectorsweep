@@ -13,7 +13,7 @@ config_version=5
 config/name="Sector Sweep - J.A.C.K."
 config/description="A fast-paced tactical shooter. Move fast and use a wide variety of weapons and tools to stop SUNSET Company's plans before it's too late."
 run/main_scene="uid://bflu68ff2p76f"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://15lcun2uanvk"
 
 [autoload]
@@ -29,10 +29,8 @@ enabled=PackedStringArray("res://addons/func_godot/plugin.cfg", "res://addons/go
 folder_colors={
 "res://addons/": "red",
 "res://assets/": "orange",
-"res://assets/scripts/": "orange",
-"res://levels/": "yellow",
 "res://map_editor/": "green",
-"res://scenes/": "teal"
+"res://sectorsweep/": "yellow"
 }
 
 [func_godot]

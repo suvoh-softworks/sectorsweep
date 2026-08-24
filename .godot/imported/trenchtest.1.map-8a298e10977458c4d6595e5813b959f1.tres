@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="QuakeMapFile" format=3]
+
+[ext_resource type="Script" uid="uid://cxvwf50mehesf" path="res://addons/func_godot/src/import/quake_map_file.gd" id="1_7upf7"]
+
+[resource]
+script = ExtResource("1_7upf7")
+map_data = "// Game: SectorSweep
+// Format: Standard
+// entity 0
+{
+\"wad\" \"\"
+\"classname\" \"worldspawn\"
+\"_tb_mod\" \"map_editor\"
+// brush 0
+{
+( -64 -64 16 ) ( -128 -144 -16 ) ( -128 64 -16 ) \"Tide Pool\" 220 -180 0 0.2 0.2
+( -64 -64 16 ) ( 64 -64 16 ) ( 64 -144 -16 ) \"Tide Pool\" 0 -144 0 0.2 0.2
+( 64 -144 -16 ) ( 64 64 -16 ) ( -128 64 -16 ) \"Tide Pool\" 0 0 0 0.2 0.2
+( -64 64 16 ) ( 64 64 16 ) ( 64 -64 16 ) \"Tide Pool\" 0 0 0 0.2 0.2
+( 64 64 -16 ) ( 64 64 16 ) ( -64 64 16 ) \"Tide Pool\" 0 0 0 0.2 0.2
+( 64 -64 16 ) ( 64 64 16 ) ( 64 64 -16 ) \"Tide Pool\" 0 0 0 0.2 0.2
+}
+}
+"
